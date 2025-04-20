@@ -57,19 +57,8 @@
         </div>
         <div class="form-group">
           <label for="phone">Phone Number</label>
-            <div style="position: relative; display: inline-block;">
-              <span style="
-                position: absolute;
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-                color: black;
-                font-family: sans-serif;
-              ">+212</span>
-
-              <input type="tel" id="phone" style="padding-left: 45px; height: 30px; font-size: 16px;"
-                placeholder="6XXXXXXXX" maxlength="9" required>
-            </div>
+          <input type="tel" id="phone" placeholder="+212..." required name="tel"
+            value="<?php echo $_SESSION['tel'] ?? ''; ?>" />
         </div>
         <div class="form-group">
           <label for="pickup-date">Pick-up Date</label>
