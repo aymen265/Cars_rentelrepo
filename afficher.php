@@ -137,10 +137,9 @@ session_start();
     <div class="info-box"><div class="label">Additional Notes:</div><div class="value"><?php echo $_SESSION["notes"] ?></div></div>
 
     <div style="text-align: center; margin-top: 2rem;">
-  <form action="update.php" method="GET" style="display: inline;">
-    <input type="hidden" name="id">
-    <button type="submit" style="background: #00b894; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">Update</button>
-  </form>
+ <a href="form.php?update_id=<?= $client['id'] ?>">
+  <button style="background:#007bff; color:white; border:none; padding:8px 15px; border-radius:5px;">Update</button>
+</a>
 
   <form action="delete.php" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this record?');">
     <input type="hidden" name="id" >
