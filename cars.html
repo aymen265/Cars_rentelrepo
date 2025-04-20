@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cars.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -34,22 +37,6 @@
             <div class="home-img">
                 <img src="images\home.png" alt="">
             </div>
-
-            <!-- <form action="" class="input-form">
-                <div class="input-box input-border">
-                    <span>Location</span>
-                    <input type="search" name="" id="" placeholder="Search Places" />
-                </div>
-                <div class="input-box input-border">
-                    <span>Start</span>
-                    <input type="date" name="start-date" id="start-date" />
-                </div>
-                <div class="input-box">
-                    <span>Return</span>
-                    <input type="date" name="return-date" id="return-date" />
-                </div>
-                <i class="bx bx-search search-btn"></i>
-            </form> -->
         </div>
     </section>
     <section class="trending container" id="trending">
@@ -202,6 +189,144 @@
 
         </div>
     </section>
+
+
+
+    <section style="background-color: var(--bg-color);" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-playfair text-center mb-16">Customer Reviews</h2>
+    
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center space-x-4">
+                    <div class="review-stars text-xl text-yellow-400">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                    </div>
+                    <span style="color: var(--text-alter-color);">4.8 out of 5</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <select class="border border-gray-200 px-4 py-2 rounded-button" style="background-color: white;">
+                        <option>Latest Reviews</option>
+                        <option>Highest Rated</option>
+                        <option>Lowest Rated</option>
+                    </select>
+                    <button class="text-white px-6 py-2 rounded-button hover:opacity-90"
+                        style="background-color: var(--main-color);">
+                        Write a Review
+                    </button>
+                </div>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+                <!-- Review 1 -->
+                <div class="p-6 rounded shadow-lg border" style="background-color: white; border-color: #f3f4f6;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4"
+                            style="background-color: #e5e7eb;">
+                            <span style="color: var(--text-alter-color);" class="font-medium">EW</span>
+                        </div>
+                        <div class="review-stars text-xl text-yellow-400">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-alter-color);" class="mb-4">
+                        "Outstanding service!"
+                        I rented a car for a weekend with my family and everything went perfectly. 
+                        The vehicle was clean, well-maintained, and the staff was very friendly. Easy booking, transparent pricing, and no bad surprises. I 100% recommend!
+                    </p>
+                    <div class="flex items-center justify-between text-sm" style="color: var(--text-alter-color);">
+                        <span>April 5, 2025</span>
+                        <span class="flex items-center">
+                            <i class="ri-verified-badge-fill mr-1" style="color: var(--main-color);"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                </div>
+    
+                <!-- Review 2 -->
+                <div class="p-6 rounded shadow-lg border" style="background-color: white; border-color: #f3f4f6;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4"
+                            style="background-color: #e5e7eb;">
+                            <span style="color: var(--text-alter-color);" class="font-medium">JR</span>
+                        </div>
+                        <div class="review-stars text-xl text-yellow-400">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-alter-color);" class="mb-4">
+                        "Top-notch experience!"
+                        I needed a car for a last-minute business trip. Booking was quick and the staff was super responsive. 
+                        The car was modern, comfortable, and fuel-efficient. I’ll definitely use their services again!                        
+                    </p>
+                    <div class="flex items-center justify-between text-sm" style="color: var(--text-alter-color);">
+                        <span>April 3, 2025</span>
+                        <span class="flex items-center">
+                            <i class="ri-verified-badge-fill mr-1" style="color: var(--main-color);"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                </div>
+    
+                <!-- Review 3 -->
+                <div class="p-6 rounded shadow-lg border" style="background-color: white; border-color: #f3f4f6;">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4"
+                            style="background-color: #e5e7eb;">
+                            <span style="color: var(--text-alter-color);" class="font-medium">SL</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Sophia Lee</h4>
+                            <div class="review-stars text-xl text-yellow-400">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-alter-color);" class="mb-4">
+                        Unbeatable value for money"
+                        I rented a car for a week during my vacation.
+                        Everything was perfect: friendly customer service, easy process, and the car ran smoothly. It's rare to find such reliable rentals at this price.
+                    </p>
+                    <div class="flex items-center justify-between text-sm" style="color: var(--text-alter-color);">
+                        <span>April 1, 2025</span>
+                        <span class="flex items-center">
+                            <i class="ri-verified-badge-fill mr-1" style="color: var(--main-color);"></i>
+                            Verified Purchase
+                        </span>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="flex justify-center mt-12">
+                <button class="px-8 py-3 rounded-button transition-colors hover:text-white"
+                    style="border: 1px solid var(--main-color); color: var(--main-color);"
+                    onmouseover="this.style.backgroundColor= 'var(--main-color)'; this.style.color='white'"
+                    onmouseout="this.style.backgroundColor= ''; this.style.color='var(--main-color)'">
+                    Load More Reviews
+                </button>
+            </div>
+        </div>
+    </section>
+    
+
+
 
     <div class="footer">
         <div class="footer-content container">
