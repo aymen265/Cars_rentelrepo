@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,53 +35,64 @@
   </header>
 
 
-  <section class="home" id="home">
-    <div class="home-content container">
-        <div class="home-img">
-            <img src="images\home.png" alt="">
+
+
+<section class="home" id="home">
+  <div class="home-content container">
+    <div class="home-img">
+      <img src="images\home.png" alt="">
+    </div>
+    <section class="form-section container">
+      <h2 class="form-title">Rent This Car</h2>
+      <form action="connect.php" class="rental-form" method="POST">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" placeholder="Your Name" required name="full-name"
+            value="<?php echo $_SESSION['full-name'] ?? ''; ?>" />
         </div>
-  <section class="form-section container">
-    <h2 class="form-title">Rent This Car</h2>
-    <form action="connect.php" class="rental-form" method="POST">
-      <div class="form-group">
-        <label for="full-name">Full Name</label>
-        <input type="text" id="full-name" placeholder="Your Name" required name="full-name"/>
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="example@mail.com" required name="email" />
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="+212..." required name="tel"/>
-      </div>
-      <div class="form-group">
-        <label for="pickup-date">Pick-up Date</label>
-        <input type="date" id="pickup-date" required name="pickup-date" />
-      </div>
-      <div class="form-group">
-        <label for="return-date">Return Date</label>
-        <input type="date" id="return-date" required name="return-date" />
-      </div>
-      <div class="form-group">
-        <label for="location">Pick-up Location</label>
-        <input type="text" id="location" placeholder="City or Agency" required name="location" />
-      </div>
-      <div class="form-group">
-        <label for="payment">Payment Method</label>
-        <select id="payment" name="payement" required>
-          <option value="">Choose a method</option>
-          <option value="card">Credit Card</option>
-          <option value="paypal">PayPal</option>
-          <option value="cash">Cash on Delivery</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="notes">Additional Notes</label>
-        <textarea id="notes" rows="4" placeholder="Any special requests?" name="notes"></textarea>
-      </div>
-      <button type="submit" class="rental-btn" name="submit">Confirm Rental</button>
-    </form>
-  </section>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="example@mail.com" required name="email"
+            value="<?php echo $_SESSION['email'] ?? ''; ?>" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+212..." required name="tel"
+            value="<?php echo $_SESSION['tel'] ?? ''; ?>" />
+        </div>
+        <div class="form-group">
+          <label for="pickup-date">Pick-up Date</label>
+          <input type="date" id="pickup-date" required name="pickup-date"
+            value="<?php echo $_SESSION['pickup-date'] ?? ''; ?>" />
+        </div>
+        <div class="form-group">
+          <label for="return-date">Return Date</label>
+          <input type="date" id="return-date" required name="return-date"
+            value="<?php echo $_SESSION['return-date'] ?? ''; ?>" />
+        </div>
+        <div class="form-group">
+          <label for="location">Pick-up Location</label>
+          <input type="text" id="location" placeholder="City or Agency" required name="location"
+            value="<?php echo $_SESSION['location'] ?? ''; ?>" />
+        </div>
+        <div class="form-group">
+          <label for="payment">Payment Method</label>
+          <select id="payment" name="payement" required>
+            <option value="">Choose a method</option>
+            <option value="card" <?php if (isset($_SESSION['payement']) && $_SESSION['payement'] == 'card') echo 'selected'; ?>>Credit Card</option>
+            <option value="paypal" <?php if (isset($_SESSION['payement']) && $_SESSION['payement'] == 'paypal') echo 'selected'; ?>>PayPal</option>
+            <option value="cash" <?php if (isset($_SESSION['payement']) && $_SESSION['payement'] == 'cash') echo 'selected'; ?>>Cash on Delivery</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" rows="4" placeholder="Any special requests?" name="notes"><?php echo $_SESSION['notes'] ?? ''; ?></textarea>
+        </div>
+        <button type="submit" class="rental-btn" name="submit">Confirm Rental</button>
+      </form>
+    </section>
+
+
+  
 </body>
 </html>

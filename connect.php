@@ -18,3 +18,44 @@ exit();
 }}
 
 ?>
+
+<?php
+session_start();
+include "connect.php";
+
+if (isset($_POST['submit'])) {
+    $id = $_SESSION['id'] ?? null;
+
+    $fullName = $_POST['full-name'];
+    $email = $_POST['email'];
+    $phone = $_POST['tel'];
+    $pickupDate = $_POST['pickup-date'];
+    $returnDate = $_POST['return-date'];
+    $location = $_POST['location'];
+    $payment = $_POST['payement'];
+    $notes = $_POST['notes'];
+
+    if ($id) {
+        // Supprimer l'ancienne ligne via ID
+        $deleteSQL = "DELETE FROM carstable WHERE id = ?";
+        $stmtDelete = $conn->prepare($deleteSQL);
+        $stmtDelete->bind_param("i", $id);
+        $stmtDelete->execute();
+    }
+
+    // Insérer la nouvelle ligne
+    $insertSQL = "INSERT INTO carstable (full_name, email, phone, pickup_date, return_date, location, payment_method, notes)
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmtInsert = $conn->prepare($insertSQL);
+    $stmtInsert->bind_param("ssssssss", $fullName, $email, $phone, $pickupDate, $returnDate, $location, $payment, $notes);
+
+    if ($stmtInsert->execute()) {
+        // Clear ID
+        unset($_SESSION['id']);
+        header("Location: afficher.php");
+        exit();
+    } else {
+        echo "Erreur d'insertion : " . $stmtInsert->error;
+    }
+}
+?>

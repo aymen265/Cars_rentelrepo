@@ -137,9 +137,11 @@ session_start();
     <div class="info-box"><div class="label">Additional Notes:</div><div class="value"><?php echo $_SESSION["notes"] ?></div></div>
 
     <div style="text-align: center; margin-top: 2rem;">
- <a href="form.php">
+
+    <a href="CARSfrm.php">
   <button style="background:#007bff; color:white; border:none; padding:8px 15px; border-radius:5px;">Update</button>
 </a>
+
 
   <form action="delete.php" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this record?');">
     <input type="hidden" name="id" >

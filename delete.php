@@ -1,4 +1,9 @@
 <?php
+ session_start();
+ session_destroy();
+?>
+
+<?php
 try {
     
     $conn = new PDO('mysql:host=localhost;dbname=cars;charset=utf8', 'root', '');
@@ -14,7 +19,7 @@ try {
         $delete = $conn->prepare('DELETE FROM carstable WHERE id = ?');
         $delete->execute([$id]);
 
-        echo "✅ Le dernier client (ID: $id) a été supprimé avec succès.";
+       header('location:cars.html');
     } else {
         echo "❌ Aucun client trouvé dans la table `carstable`.";
     }
