@@ -34,9 +34,11 @@
     </header>
     <section class="home" id="home">
         <div class="home-content container">
-            <div class="home-img">
-                <img src="images\home.png" alt="">
+            <div class="home-img" id="slider-container">
+                <div id="text-slider" class="slide-in">taycan</div>
+                <img src="images\home.png" alt="" id="slideshow" class="fade-in">
             </div>
+
         </div>
     </section>
     <section class="trending container" id="trending">
@@ -47,25 +49,25 @@
         <div class="trending-content">
             <div class="trend-box">
                 <h4>Electric</h4>
-                <a href="CARSfrm.php"><img src="images/trend-1.png" alt=""></a>
+                <img src="images/trend-1.png" alt="">
                 <h3>Taycan S</h3>
                 <p>2500MAD/day</p>
             </div>
             <div class="trend-box">
                 <h4>Electric</h4>
-                <a href="CARSfrm.php"><img src="images/trend-2.png" alt=""></a>
+                <img src="images/trend-2.png" alt="">
                 <h3>Taycan</h3>
                 <p>2500MAD/day</p>
             </div>
             <div class="trend-box">
                 <h4>Electric</h4>
-                <a href="CARSfrm.php"><img src="images/trend-3.png" alt=""></a>
+                <img src="images/trend-3.png" alt="">
                 <h3>Taycan Turbo</h3>
                 <p>2500MAD/day</p>
             </div>
             <div class="trend-box">
                 <h4>Electric</h4>
-                <a href="CARSfrm.php"><img src="images/trend-4.png" alt=""></a>
+                <img src="images/trend-4.png" alt="">
                 <h3>Taycan Turismo</h3>
                 <p>2500MAD/day</p>
             </div>
@@ -189,8 +191,6 @@
 
         </div>
     </section>
-
-
 
     <section style="background-color: var(--bg-color);" class="py-20">
         <div class="container mx-auto px-6">
@@ -324,9 +324,6 @@
             </div>
         </div>
     </section>
-    
-
-
 
     <div class="footer">
         <div class="footer-content container">
@@ -344,7 +341,7 @@
                 <h3>Opening Hours</h3>
                 <p><span>Mon</span>: 9:00 - 20:30 </p>
                 <p><span>Wed</span>: 9:00 - 20:30 </p>
-                <p><span>Thu</span>: 9:00 - 20:30 </p>
+                <p><span>Thu</span>: 9:ee - 20:30 </p>
                 <p><span>Fri</span>: 9:00 - 20:30 </p>
                 <p><span>Sat</span>: 9:00 - 20:30 </p>
                 <p><span>Sun</span>: Closed</p>
@@ -376,8 +373,10 @@
     </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
-      <script src="phone.js"></script>
     <script src="cars.js"></script>
+    <script src="slides.js"></script>
+    <script src="textslide.js"></script>
+    
 </body>
 
 </html>

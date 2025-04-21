@@ -16,9 +16,8 @@ const animate = ScrollReveal({
 })
 
 animate.reveal('.nav,.heading');
-animate.reveal(".home-img img", { origin: "right" });
+animate.reveal(".ppp", { origin: "top" });
 animate.reveal(".input-form", { origin: "bottom" });
 animate.reveal(".trend-box, .rental-box", { interval: 100 });
-
 
 

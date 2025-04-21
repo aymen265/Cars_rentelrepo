@@ -167,9 +167,8 @@ header {
 
 }
 
-.home-img::before {
+#text-slider{
     width: 100%;
-    content: "Taycan";
     font-size: 11rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -512,11 +511,53 @@ header {
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
     }
+
     .open-menu {
-        clip-path :polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);}
-        .nav-link{
-        display:  block;
-        margin: 1rem 0;}
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .nav-link {
+        display: block;
+        margin: 1rem 0;
+    }
 
 }
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.slide-in {
+    animation: slideInRight 1s ease-in-out;
+}
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+}
+:where([class^="ri-"])::before { content: "\f3c2"; }
+        .review-stars {
+            display: inline-flex;
+            color: #004D40;
+        }
+        .review-stars i {
+            margin-right: 2px;
+        }

@@ -55,8 +55,20 @@
         </div>
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="+212..." required name="tel"
-            value="<?php echo $_SESSION['tel'] ?? ''; ?>" />
+          <div style="position: relative; display: inline-block;">
+              <span style="
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: black;
+                font-family: sans-serif;
+              ">+212</span>
+
+              <input type="tel" id="phone" style="padding-left: 45px; height: 30px; font-size: 16px;"
+                placeholder="6XXXXXXXX" maxlength="9" required name="tel"
+                value="<?php echo $_SESSION['tel'] ?? ''; ?>">
+            </div>
         </div>
         <div class="form-group">
           <label for="pickup-date">Pick-up Date</label>
@@ -86,11 +98,18 @@
           <label for="notes">Additional Notes</label>
           <textarea id="notes" rows="4" placeholder="Any special requests?" name="notes"><?php echo $_SESSION['notes'] ?? ''; ?></textarea>
         </div>
+        <button type="button" class="rental-btn" onclick="calculate()">Get Price</button>
         <button type="submit" class="rental-btn" name="submit">Confirm Rental</button>
       </form>
+      <p class="rental-btn" id="result" style="margin-top: 20px; cursor: auto;"></p>
     </section>
 
 
+    <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="cars.js"></script>
+  <script src="phone.js"></script>
+  <script src="date.js"></script>
+  <script src="price.js"></script>
   
 </body>
 </html>
