@@ -1,6 +1,4 @@
-<?php
- session_start();
-?>
+<?php  include 'update.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +42,7 @@
     </div>
     <section class="form-section container">
       <h2 class="form-title">Rent This Car</h2>
-      <form action="connect.php" class="rental-form" method="POST">
+      <form action="" class="rental-form" method="POST">
         <div class="form-group">
           <label for="full-name">Full Name</label>
           <input type="text" id="full-name" placeholder="Your Name" required name="full-name"
@@ -96,3 +94,4 @@
   
 </body>
 </html>
+

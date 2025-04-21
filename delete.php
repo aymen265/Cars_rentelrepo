@@ -5,9 +5,10 @@
 
 <?php
 try {
-    
-    $conn = new PDO('mysql:host=localhost;dbname=cars;charset=utf8', 'root', '');
-
+    $conn = new PDO("mysql:host=localhost;dbname=cars;port=3307;charset=utf8", 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+} catch (Exception $e) {
+    die('Erreur de connexion: ' . $e->getMessage());
+}
     // Récupérer le dernier client (avec le plus grand id)
     $stmt = $conn->query('SELECT * FROM carstable ORDER BY id DESC LIMIT 1');
     $lastClient = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -24,7 +25,5 @@ try {
         echo "❌ Aucun client trouvé dans la table `carstable`.";
     }
 
-} catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
-}
+
 ?>
