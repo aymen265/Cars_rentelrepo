@@ -361,8 +361,34 @@
                 <p>Address: Casablanca, sidi moumen</p>
                 <p class="copyright">&#169; 2025 CRrental</p>
             </div>
+             <!-- Back to Top Button -->
+    <button id="back-to-top"
+    class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-black rounded-full flex items-center justify-center opacity-0 invisible transition-all z-50">
+    <i class="ri-arrow-up-line ri-lg"></i>
+</button>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('opacity-0', 'invisible');
+            backToTopButton.classList.add('opacity-100', 'visible');
+        } else {
+            backToTopButton.classList.remove('opacity-100', 'visible');
+            backToTopButton.classList.add('opacity-0', 'invisible');
+        }
+    });
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
 
         </div>
+      
     </div>
     </div>
     </div>
